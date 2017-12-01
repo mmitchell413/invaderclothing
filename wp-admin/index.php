@@ -111,7 +111,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 	$hide = 0 == $option || ( 2 == $option && wp_get_current_user()->user_email != get_option( 'admin_email' ) );
 	if ( $hide )
 		$classes .= ' hidden'; ?>
-
+    <?php echo "<a href='" . get_home_url() . "' target='_blank'>" . get_home_url() . "</a>"; ?>
 	<div id="welcome-panel" class="<?php echo esc_attr( $classes ); ?>">
 		<?php wp_nonce_field( 'welcome-panel-nonce', 'welcomepanelnonce', false ); ?>
 		<a class="welcome-panel-close" href="<?php echo esc_url( admin_url( '?welcome=0' ) ); ?>" aria-label="<?php esc_attr_e( 'Dismiss the welcome panel' ); ?>"><?php _e( 'Dismiss' ); ?></a>
